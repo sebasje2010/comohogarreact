@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="root">
+        <div class="title">
+            <img src="Logo.png" alt="logo-persona" class="logo">
+            <h2>Panel de Clientes</h2>
+        </div>
+        <div class="container">
+            <div class="container-user">
+                <h3>Lista de Usuario</h3>
+                <p>Registre la siguiente informacion para crear un nuevo usuario:</p>
+            </div>
+        </div>
+        <div>
+            <div class="newUser">
+                <input type="text" name="Nombre" id="name" placeholder="Nombre">
+                <input type="email" name="Email" id="email" placeholder="e-mail">
+                <input type="number" name="cedula" id="id" placeholder="Cédula">
+                <input type="tel" name="telefono" id="phone" placeholder="Teléfono">
+                <input list="options" name="status" id="status" placeholder="Estado">
+                    <datalist id="options">
+                        <option value="Activo">
+                        <option value="Inactivo">
+                        <option value="Pendiente">
+                    </datalist>
+            </div>
+            <div class="Submit">
+                <input type="button" value="Crear" class="solid-button">
+                <input type="button" value="Regresar" class="white-button">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

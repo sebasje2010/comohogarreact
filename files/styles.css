@@ -1,0 +1,87 @@
+:root{
+    --textcolor:grey
+}
+body{
+    margin:0;
+    width:100%;
+    font-family: 'Rubik', sans-serif;
+}
+.root{
+    height:100vh;
+    display: grid;
+    row-gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: 75% auto;
+}
+.container input{
+    align-self: center;
+    justify-self: center;
+}
+.title{
+    display: grid;
+    grid-template-columns: 40px auto;
+    border-bottom: solid 1px var(--textcolor);
+    align-items: center;
+    width:800px
+}
+.logo{
+    zoom: 3%;
+    display: grid;
+    place-items: center;
+
+}
+.user-list{
+    border: 1px solid;
+    display: grid;
+    color:var(--textcolor)
+}
+.user{
+    display:grid;
+    place-items: center;
+    grid-template-columns: 200px 200px 200px 200px;
+}
+.container-user{
+    display: grid;
+    align-self: start;
+    color:var(--textcolor)
+}
+.container-user h3{
+    margin: 5px;
+}
+.container-user p{
+    margin: 5px;
+}
+.solid-button{
+    background-color: rgb(255, 196, 86);
+    color: white;
+    place-items: center;
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+}
+.white-button{
+    color: rgb(255, 196, 86);
+    background-color: white;
+    border-radius: 5px;
+    border-color: rgb(255, 196, 86);
+    border-style: solid;
+    height: 30px;
+    width:150px;
+}
+.newUser input{
+    height:40px;
+    margin:0 0 5px 0;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+.newUser{
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 300px;
+}
