@@ -1,13 +1,13 @@
 import React from "react";
 
-function CreateUser(){
+function CreateUser(props){
     const onClickButton=()=>{
-        
+        props.setOpenModal(prevState=>!prevState)
     }
     return(
     <button 
     className="solid-button"
-    onClick={()=>onClickButton}
+    onClick={onClickButton}
     >
         Nuevo cliente
     </button>

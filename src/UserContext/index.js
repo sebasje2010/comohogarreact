@@ -11,6 +11,7 @@ function UserProvider(props){
     error,
   }=useLocalStorage('IndexedDB',[])
   const [searchValue,setSearchValue]=React.useState('')
+  const [openModal,setOpenModal]=React.useState(false)
   const totalUsers=users.length
   let searchedUsers=[]
   if(!searchValue.length>=1){
@@ -31,6 +32,19 @@ function UserProvider(props){
     saveUsers(newUsers)
   }
 
+  const editUser=(name)=>{
+    const userIndex=users.findIndex(user=>user.name===name)
+    const newUsers=[...users]
+    newUsers.splice(userIndex,1)
+    saveUsers(newUsers)
+  }
+
+  const addUser=(newUserName,newUserEmail,newUserID,newUserNumber,newUserStatus)=>{
+    const newUsers=[...users]
+    newUsers.push({name:newUserName,email:newUserEmail,id:newUserID,phone:newUserNumber, status: newUserStatus})
+    saveUsers(newUsers)
+  }
+
     return(
         <UserContext.Provider value={{
             loading,
@@ -40,6 +54,10 @@ function UserProvider(props){
             setSearchValue,
             searchedUsers,
             deleteUser,
+            editUser,
+            addUser,
+            openModal,
+            setOpenModal
         }}>
             {props.children}
         </UserContext.Provider>
