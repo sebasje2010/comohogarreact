@@ -24,7 +24,7 @@ body{
   grid-template-columns: 40px auto;
   border-bottom: solid 1px var(--textcolor);
   align-items: center;
-  width:800px
+  width:900px
 }
 .logo{
   zoom: 3%;
@@ -40,7 +40,7 @@ body{
 .user{
   display:grid;
   place-items: center;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-columns: 300px 200px 200px 200px;
 }
 .container-user{
   display: grid;
@@ -71,7 +71,7 @@ body{
   height: 30px;
   width:150px;
 }
-.newUser button{
+.newUser input{
   height:40px;
   margin:0 0 5px 0;
   border-radius: 5px;

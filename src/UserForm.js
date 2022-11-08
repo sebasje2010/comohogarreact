@@ -1,12 +1,12 @@
 import React from "react"
 import {UserContext} from './UserContext'
 
-function UserForm(){
-  const [newUserName, setNewUserName]=React.useState('')
-  const [newUserEmail, setNewUserEmail]=React.useState('')
-  const [newUserID, setNewUserID]=React.useState('')
-  const [newUserNumber, setNewUserNumber]=React.useState('')
-  const [newUserStatus, setNewUserStatus]=React.useState('')
+function UserForm(props){
+  const [newUserName, setNewUserName]=React.useState("")
+  const [newUserEmail, setNewUserEmail]=React.useState("")
+  const [newUserID, setNewUserID]=React.useState("")
+  const [newUserNumber, setNewUserNumber]=React.useState("")
+  const [newUserStatus, setNewUserStatus]=React.useState("")
   const {
     addUser,
     setOpenModal
