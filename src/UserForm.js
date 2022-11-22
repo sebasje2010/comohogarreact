@@ -1,7 +1,7 @@
 import React from "react"
 import {UserContext} from './UserContext'
 
-function UserForm(props){
+function UserForm(){
   const [newUserName, setNewUserName]=React.useState("")
   const [newUserEmail, setNewUserEmail]=React.useState("")
   const [newUserID, setNewUserID]=React.useState("")

@@ -4,11 +4,6 @@ import {useLocalStorage} from './useLocalStorage'
 const UserContext=React.createContext()
 
 function UserProvider(props){
-  let newTempName
-  let newTempEmail
-  let newTempID
-  let newTempNumber
-  let newTempStatus
   const{
     item:users,
     saveItem:saveUsers,
@@ -40,11 +35,6 @@ function UserProvider(props){
   const editUser=(name)=>{
     const newUsers=[...users]
     const userIndex=users.findIndex(user=>user.name===name)
-    newTempName=newUsers[userIndex].name
-    newTempEmail=newUsers[userIndex].email
-    newTempID=newUsers[userIndex].id
-    newTempNumber=newUsers[userIndex].phone
-    newTempStatus=newUsers[userIndex].status
     newUsers.splice(userIndex,1)
     saveUsers(newUsers)
   }
@@ -58,11 +48,6 @@ function UserProvider(props){
     return(
         <UserContext.Provider value={{
             loading,
-            newTempName,
-            newTempEmail,
-            newTempID,
-            newTempNumber,
-            newTempStatus,
             error,
             totalUsers,
             searchValue,
