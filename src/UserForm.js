@@ -1,16 +1,11 @@
 import React from "react"
-import {UserContext} from './UserContext'
 
-function UserForm(){
+function UserForm({addUser,setOpenModal}){
   const [newUserName, setNewUserName]=React.useState("")
   const [newUserEmail, setNewUserEmail]=React.useState("")
   const [newUserID, setNewUserID]=React.useState("")
   const [newUserNumber, setNewUserNumber]=React.useState("")
   const [newUserStatus, setNewUserStatus]=React.useState("")
-  const {
-    addUser,
-    setOpenModal
-  }=React.useContext(UserContext)
   const onNameChange=(event)=>{
     setNewUserName(event.target.value)
   }

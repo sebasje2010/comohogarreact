@@ -1,8 +1,6 @@
 import React from "react";
-import { UserContext } from "./UserContext";
 
-function UserSearch(){
-    const {searchValue,setSearchValue}=React.useContext(UserContext)
+function UserSearch({searchValue,setSearchValue}){
     const onSearchValueChange=(event)=>{
         setSearchValue(event.target.value)}
     return(

@@ -1,9 +1,7 @@
 import React from "react";
 import {useLocalStorage} from './useLocalStorage'
 
-const UserContext=React.createContext()
-
-function UserProvider(props){
+function useUsers(){
   const{
     item:users,
     saveItem:saveUsers,
@@ -45,8 +43,7 @@ function UserProvider(props){
     saveUsers(newUsers)
   }
 
-    return(
-        <UserContext.Provider value={{
+    return{
             loading,
             error,
             totalUsers,
@@ -58,10 +55,7 @@ function UserProvider(props){
             addUser,
             openModal,
             setOpenModal
-        }}>
-            {props.children}
-        </UserContext.Provider>
-    )
+        }
 }
 
-export {UserContext,UserProvider}
+export {useUsers}

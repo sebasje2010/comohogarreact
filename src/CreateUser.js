@@ -6,10 +6,9 @@ function CreateUser(props){
     }
     return(
     <button 
-    className="solid-button"
-    onClick={onClickButton}
-    >
-        Nuevo cliente
+        className="solid-button"
+        onClick={onClickButton}
+    >Nuevo cliente
     </button>
     )
 }
