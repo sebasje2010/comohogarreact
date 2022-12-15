@@ -1,6 +1,6 @@
 import React from "react";
 
-function UserSearch({searchValue,setSearchValue}){
+function UserSearch({searchValue,setSearchValue,loading}){
     const onSearchValueChange=(event)=>{
         setSearchValue(event.target.value)}
     return(
@@ -9,6 +9,7 @@ function UserSearch({searchValue,setSearchValue}){
             placeholder='Filtrar por Nombre'
             value={searchValue}
             onChange={onSearchValueChange}
+            disabled={loading}
         />
     )
 }

@@ -27,12 +27,13 @@ body{
   width:900px
 }
 .logo{
-  zoom: 3%;
+  height: 30px;
   display: grid;
   place-items: center;
 
 }
 .user-list{
+  margin: 10px 0;
   border: 1px solid;
   display: grid;
   color:var(--textcolor)
@@ -41,6 +42,12 @@ body{
   display:grid;
   place-items: center;
   grid-template-columns: 300px 200px 200px 200px;
+}
+.UserSearch:disabled{
+  opacity: 25%;
+}
+.UserCounter--loading{
+  opacity: 25%;
 }
 .container-user{
   display: grid;

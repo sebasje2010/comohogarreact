@@ -42,20 +42,20 @@ function useUsers(){
     newUsers.push({name:newUserName,email:newUserEmail,id:newUserID,phone:newUserNumber, status: newUserStatus})
     saveUsers(newUsers)
   }
-
-    return{
-            loading,
-            error,
-            totalUsers,
-            searchValue,
-            setSearchValue,
-            searchedUsers,
-            deleteUser,
-            editUser,
-            addUser,
-            openModal,
-            setOpenModal
-        }
+  
+  return{
+    loading,
+    error,
+    totalUsers,
+    searchValue,
+    setSearchValue,
+    searchedUsers,
+    deleteUser,
+    editUser,
+    addUser,
+    openModal,
+    setOpenModal
+  }
 }
 
 export {useUsers}

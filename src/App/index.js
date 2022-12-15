@@ -4,11 +4,15 @@ import {UserHeader} from "../UserHeader"
 import {UserCounter} from '../UserCounter'
 import {UserSearch} from '../UserSearch'
 import {UserList} from '../UserList'
+import {UserLoading} from '../UserLoading'
+import {UserError} from '../UserError'
 import {User} from '../User'
 import {UserForm} from '../UserForm'
 import {CreateUser} from '../CreateUser'
 import { Modal } from "../Modal";
-const logo = require('./logo.png')
+import {EmptyUser} from '../EmptyUser'
+import {EmptySearchResults} from "../EmptySearchResults"
+
 // const defaultusers=[
 //   {name:'Monica Enriquez',email:'menriquez@abc.com',id:'123.456.789-00',phone:'(593)321654987', status: 'Active'},
 //   {name:'Gabriel Simbaña',email:'menriquez@abc.com',id:'123.456.789-00',phone:'(593)321654987', status: 'Active'},
@@ -33,11 +37,7 @@ function App() {
     <React.Fragment>
       {!openModal&&(
         <div>
-          <UserHeader>
-            <div className="title">
-            <img src={logo} alt="logo-persona" className="logo"/>
-            <h2>Panel de Clientes</h2>
-          </div>
+          <UserHeader loading={loading}>
           <UserCounter
             totalUsers={totalUsers}
           />
@@ -55,11 +55,19 @@ function App() {
             setSearchValue={setSearchValue}
           />
           </UserHeader>
-          <UserList>
-            {error&&<p>Hubo un error</p>}
-            {loading&&<p>Se está cargando la aplicación</p>}
-            {(!loading&&!searchedUsers.length)&&<p>Por favor cree al primer usuario</p>}
-            {searchedUsers.map(user=>(
+
+          <UserList
+            error={error}
+            loading={loading}
+            searchedUsers={searchedUsers}
+            totalUsers={totalUsers}
+            searchValue={searchValue}
+            onError={()=><UserError/>}
+            onLoading={()=><UserLoading/>}
+            onEmptyUser={()=><EmptyUser/>}
+            onEmptySearchResults={()=><EmptySearchResults searchValue={searchValue}/>}
+            >
+            {user=>(
               <User 
                 key={user.name}
                 name={user.name}
@@ -70,8 +78,8 @@ function App() {
                 onDelete={()=>deleteUser(user.name)}
                 onEdit={()=>editUser(user.name)}
               />
-            ))}
-          </UserList>
+            )}
+            </UserList>
         </div>
       )}
       {!!openModal&&(
